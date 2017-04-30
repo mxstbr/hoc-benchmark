@@ -7,11 +7,13 @@ const htmlBefore = rootElem.innerHTML;
 
 console.log('Initialising benchmark...');
 
+/**
+ * Render the app without any HoCs
+ */
 const renderWithout = () => {
   rootElem.innerHTML = htmlBefore;
 
   console.log('Rendering 10,000 components without a higher-order component. (HoC)');
-  // Render without HoC
   const before = performance.now();
   ReactDOM.render(
     <Benchmark />,
@@ -22,10 +24,13 @@ const renderWithout = () => {
   console.log('Time it took to render:', after - before);
 }
 
+/**
+ * Render the app with each component wrapped in a HoC
+ */
 const renderWith = () => {
   rootElem.innerHTML = htmlBefore;
+
   console.log('Rendering 10,000 components wrapped in a higher-order component. (HoC)');
-  // Render with HoC
   const beforeWrapped = performance.now();
   ReactDOM.render(
     <Benchmark />,
