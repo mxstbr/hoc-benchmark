@@ -33,7 +33,7 @@ const renderWith = () => {
   console.log('Rendering 10,000 components wrapped in a higher-order component. (HoC)');
   const beforeWrapped = performance.now();
   ReactDOM.render(
-    <Benchmark />,
+    <Benchmark wrap />,
     rootElem
   );
   const afterWrapped = performance.now();
