@@ -13,7 +13,7 @@ console.log('Initialising benchmark...');
 const renderWithout = () => {
   rootElem.innerHTML = htmlBefore;
 
-  console.log('Rendering 10,000 components without a higher-order component. (HoC)');
+  console.log('---Without HoC---');
   const before = performance.now();
   ReactDOM.render(
     <Benchmark />,
@@ -22,6 +22,7 @@ const renderWithout = () => {
   const after = performance.now();
 
   console.log('Time it took to render:', after - before);
+  console.log();
 }
 
 /**
@@ -30,7 +31,7 @@ const renderWithout = () => {
 const renderWith = () => {
   rootElem.innerHTML = htmlBefore;
 
-  console.log('Rendering 10,000 components wrapped in a higher-order component. (HoC)');
+  console.log('---With HoC---');
   const beforeWrapped = performance.now();
   ReactDOM.render(
     <Benchmark wrap />,
@@ -39,6 +40,7 @@ const renderWith = () => {
   const afterWrapped = performance.now();
 
   console.log('Time it took to render:', afterWrapped - beforeWrapped);
+  console.log();
 }
 
 console.log('Doing a warmup render...');
