@@ -9,15 +9,17 @@ On my machine (Late 2013 13" MacBook Pro) the difference between a run with and 
 ## Setup
 
 ```sh
+npm i -g serve
 git clone https://github.com/mxstbr/hoc-benchmark
 cd hoc-benchmark
 yarn install    # or npm install
-yarn run start
+yarn run build
+serve build/
 ```
 
 ## Running the benchmarks
 
-Open `localhost:3000` in your browser of choice and click either of the two buttons presented to you. The time it took to render the page will be logged to the console.
+Open the URL `serve` outputs in your browser of choice and click either of the two buttons presented to you. The time it took to render the page will be logged to the console.
 
 Make sure to press both buttons a bunch of times to get a feel for the results as they vary wildly. Also don't forget to do it in multiple browser and across multiple page refreshes.
 
